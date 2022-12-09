@@ -7,6 +7,58 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="267*"/>
+                <ColumnDefinition Width="533*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Left" Orientation="Vertical" VerticalAlignment="Top" Margin="10,10,0,0" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+                <TextBlock x:Name="resultLabel" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result0" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result1" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result2" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result3" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result4" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result5" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result6" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result7" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result8" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+                <TextBlock x:Name="result9" Text="{Binding UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Width="200" FontFamily="Consolas" FontSize="16"/>
+            </StackPanel>
+            <WrapPanel HorizontalAlignment="Left" Margin="10,10,0,0" Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Width="100"><Run Language="ko-kr" Text="Length"/></TextBlock>
+                <TextBox x:Name="LengthText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="16"/>
+            </WrapPanel>
+            <Button x:Name="SetLengthButton" Content="Set Length" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="220" Click="SetLengthButton_Click" FontSize="16" Grid.Column="1"/>
+            <WrapPanel HorizontalAlignment="Left" Margin="10,94,0,0" Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Width="100"><Run Language="ko-kr" Text="Number"/></TextBlock>
+                <TextBox x:Name="NumberText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Left" Margin="10,122,0,0" Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Width="100"><Run Language="ko-kr" Text="String"/></TextBlock>
+                <TextBox x:Name="StringText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Left" Margin="10,150,0,0" Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Width="100"><Run Language="ko-kr" Text="Remarks"/></TextBlock>
+                <TextBox x:Name="RemarkText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+            </WrapPanel>
+            <Button x:Name="AddDataButton" Content="Add Data" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" Width="220" Click="AddDataButton_Click" FontSize="16" Grid.Column="1"/>
+            <Button Grid.Column="1" Content="Load Data" HorizontalAlignment="Left" Margin="267,142,0,0" VerticalAlignment="Top" FontSize="16" Click="Button_Click_1"/>
+            <Button Grid.Column="1" Content="Delete Selected Entry" HorizontalAlignment="Left" Margin="267,178,0,0" VerticalAlignment="Top" FontSize="16" Click="Button_Click"/>
+            <TextBox x:Name="MapNumber" Grid.Column="1" HorizontalAlignment="Left" Margin="267,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="MapNumber_TextChanged"/>
+            <TextBox x:Name="Mapped" Grid.Column="1" HorizontalAlignment="Left" Margin="392,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" IsReadOnly="True" Background="#00000000" BorderBrush="{x:Null}" FontFamily="Consolas"></TextBox>
+            <TextBox x:Name="MapString" Grid.Column="1" HorizontalAlignment="Left" Margin="267,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="MapString_TextChanged"/>
+            <TextBox x:Name="Mapped_2" Grid.Column="1" HorizontalAlignment="Left" Margin="392,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" IsReadOnly="True" Background="#00000000" BorderBrush="{x:Null}" FontFamily="Consolas"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="267,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ko-kr" Text="Number -&gt; String"/></TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="267,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ko-kr" Text="String -&gt; Number"/></TextBlock>
+            <Button Grid.Column="1" Content="Copy" HorizontalAlignment="Left" Margin="385,142,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="-0.095,0.199" Click="Button_Click_2"/>
+        </Grid>
+        <DataGrid x:Name="Data" Margin="0,217,0,0" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="number" Binding="{Binding Number}"/>
+                <DataGridTextColumn Header="string" Binding="{Binding String}"/>
+                <DataGridTextColumn Header="remarks" Binding="{Binding Remarks}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
